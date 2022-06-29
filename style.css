@@ -20,23 +20,30 @@ html {
   align-items: center;
   width: 100%;
   position: relative;
-  overflow: hidden;
 }
 
 .slider-inner img.active {
   display: block;
-  /* transition: ease-in-out 0.3s all; */
+  transition: ease-in-out 0.3s all;
+  transform: translateX(0px);
+  opacity: 1;
 }
 img.active {
   transition: ease-in-out 0.3s all;
 }
 .slider-inner img {
-  display: none;
+  width: 0;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: ease-in-out 0.3s all;
 }
 .slider-inner img {
   object-fit: cover;
   height: 500px;
   width: 60%;
+  position: absolute;
+  top: 73%;
+  overflow: hidden;
 }
 .nav-btn a {
   columns: #000;
@@ -48,7 +55,27 @@ img.active {
   align-items: center;
   width: 60%;
   margin: auto;
+  position: absolute;
+  bottom: 33%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 .container h1 {
   padding: 40px;
+}
+.nav-dots span.dots.indice {
+  background-color: chocolate;
+}
+.nav-dots span.dots {
+  height: 15px;
+  width: 15px;
+  border: 1px solid #000;
+  border-radius: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+@keyframes fade1 {
+  0% {
+    opacity: 1;
+  }
 }
